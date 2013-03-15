@@ -1,109 +1,142 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="assets/css/core.css">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    </head>
-    <body>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>NetMONITOR</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="assets/css/core.css">
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div id="loading">&nbsp;</div>
 
+		<div class="navbar navbar-inverse navbar-static-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a href="#" class="brand">NetMONITOR</a>
 
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<p class="navbar-text pull-right" data="nm-hostname"></p>
+						<ul class="nav">
+							<li class="active"><a href="#">Dashboard</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- NAVBAR
-    ================================================== -->
-    <div class="navbar-wrapper">
-      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-      <div class="container">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span2">
+					<ul class="nav nav-list well">
+						<li class="nav-header">Sidebar</li>
+						<li><a href="#">Test</a></li>
+					</ul>
+				</div>
+				<div class="span10">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>PID</th>
+								<th>Name</th>
+								<th>CMD</th>
+								<th>State</th>
+								<th>Exit-Code</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr pid="2001">
+								<td>2001</td>
+								<td>smartPioneerBaseServer</td>
+								<td>bin/smartPioneerBaseServer</td>
+								<td>RUNNING</td>
+								<td>-</td>
+								<td>
+									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
+								</td>
+							</tr>
+							<tr pid="2002">
+								<td>2002</td>
+								<td>smartPioneerBaseServer</td>
+								<td>bin/smartPioneerBaseServer</td>
+								<td>RUNNING</td>
+								<td>-</td>
+								<td>
+									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
+								</td>
+							</tr>
+							<tr pid="2003">
+								<td>2003</td>
+								<td>smartPioneerBaseServer</td>
+								<td>bin/smartPioneerBaseServer</td>
+								<td>RUNNING</td>
+								<td>-</td>
+								<td>
+									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
+								</td>
+							</tr>
+							<tr pid="2004">
+								<td>2004</td>
+								<td>smartPioneerBaseServer</td>
+								<td>bin/smartPioneerBaseServer</td>
+								<td>RUNNING</td>
+								<td>-</td>
+								<td>
+									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
+								</td>
+							</tr>
+							<tr pid="2005">
+								<td>2005</td>
+								<td>smartPioneerBaseServer</td>
+								<td>bin/smartPioneerBaseServer</td>
+								<td>RUNNING</td>
+								<td>-</td>
+								<td>
+									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
+								</td>
+							</tr>
+							<tr pid="2006">
+								<td>2006</td>
+								<td>smartPioneerBaseServer</td>
+								<td>bin/smartPioneerBaseServer</td>
+								<td>RUNNING</td>
+								<td>-</td>
+								<td>
+									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
+									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 
-        <div class="navbar navbar-inverse">
-          <div class="navbar-inner">
-            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="#">Project name</a>
-            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-            <div class="nav-collapse collapse">
-              <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="nav-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div><!-- /.navbar-inner -->
-        </div><!-- /.navbar -->
-
-      </div> <!-- /.container -->
-    </div><!-- /.navbar-wrapper -->
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-chrome.png">
-        <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-left" src="../assets/img/examples/browser-icon-firefox.png">
-        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-safari.png">
-        <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>© 2013 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
-  
-    	<div id="loading"><p>Loading ...</p></div>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="assets/js/spin.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/spin.min.js"></script>
 		<script>
 			var opts = {
-				lines: 50, // The number of lines to draw
+				lines: 70, // The number of lines to draw
 				length: 1, // The length of each line
-				width: 2, // The line thickness
+				width: 1, // The line thickness
 				radius: 100, // The radius of the inner circle
-				corners: 1, // Corner roundness (0..1)
+				corners: 0, // Corner roundness (0..1)
 				rotate: 0, // The rotation offset
 				color: '#06f', // #rgb or #rrggbb
 				speed: 1, // Rounds per second
@@ -115,16 +148,23 @@
 				top: 'auto', // Top position relative to parent in px
 				left: 'auto' // Left position relative to parent in px
 			};
-			var target = document.getElementById('foo');
+			var target = document.getElementById('loading');
 			var spinner = new Spinner(opts).spin(target);
 
 			var socket = io.connect('');
-			socket.on('news', function (data) {
+			socket.on('dashboard', function (data) {
+				$('[data="nm-hostname"]').text('@'+data.hostname+', '+data.type+' ('+data.arch+') '+data.release);
+				$('#loading').hide();
+			});
+			socket.emit('hello', 'world', function (data) {
 				console.log(data);
-				socket.emit('name', 'Michi', function(data) {
-					console.log(data);
-				});
+			});
+			socket.emit('hello', 'world', function (data) {
+				console.log(data);
+			});
+			socket.on('system', function (data) {
+				// TODO: show data.
 			});
 		</script>
-    </body>
+	</body>	
 </html>
