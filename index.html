@@ -29,97 +29,28 @@
 
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<div class="span2">
-					<ul class="nav nav-list well">
-						<li class="nav-header">Sidebar</li>
-						<li><a href="#">Test</a></li>
-					</ul>
-				</div>
-				<div class="span10">
-					<table class="table table-hover">
+				<div class="span12">
+					<table class="table table-hover" style="table-layout:fixed;">
+						<colgroup>
+							<col style="width:70px;" />
+							<col style="width:150px;" />
+							<col style="width:250px;" />
+							<col style="width:50px;" />
+							<col style="" />
+							<col style="width:110px;" />
+						</colgroup>
 						<thead>
 							<tr>
 								<th>PID</th>
 								<th>Name</th>
 								<th>CMD</th>
 								<th>State</th>
-								<th>Exit-Code</th>
+								<th>Output</th>
 								<th>Actions</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr pid="2001">
-								<td>2001</td>
-								<td>smartPioneerBaseServer</td>
-								<td>bin/smartPioneerBaseServer</td>
-								<td>RUNNING</td>
-								<td>-</td>
-								<td>
-									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
-								</td>
-							</tr>
-							<tr pid="2002">
-								<td>2002</td>
-								<td>smartPioneerBaseServer</td>
-								<td>bin/smartPioneerBaseServer</td>
-								<td>RUNNING</td>
-								<td>-</td>
-								<td>
-									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
-								</td>
-							</tr>
-							<tr pid="2003">
-								<td>2003</td>
-								<td>smartPioneerBaseServer</td>
-								<td>bin/smartPioneerBaseServer</td>
-								<td>RUNNING</td>
-								<td>-</td>
-								<td>
-									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
-								</td>
-							</tr>
-							<tr pid="2004">
-								<td>2004</td>
-								<td>smartPioneerBaseServer</td>
-								<td>bin/smartPioneerBaseServer</td>
-								<td>RUNNING</td>
-								<td>-</td>
-								<td>
-									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
-								</td>
-							</tr>
-							<tr pid="2005">
-								<td>2005</td>
-								<td>smartPioneerBaseServer</td>
-								<td>bin/smartPioneerBaseServer</td>
-								<td>RUNNING</td>
-								<td>-</td>
-								<td>
-									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
-								</td>
-							</tr>
-							<tr pid="2006">
-								<td>2006</td>
-								<td>smartPioneerBaseServer</td>
-								<td>bin/smartPioneerBaseServer</td>
-								<td>RUNNING</td>
-								<td>-</td>
-								<td>
-									<a href="#" class="btn btn-mini btn-success"><i class="icon-play icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-warning"><i class="icon-repeat icon-white"></i></a>
-									<a href="#" class="btn btn-mini btn-danger"><i class="icon-stop icon-white"></i></a>
-								</td>
-							</tr>
+						<tbody id="processes">
+							
 						</tbody>
 					</table>
 				</div>
@@ -130,41 +61,6 @@
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/spin.min.js"></script>
-		<script>
-			var opts = {
-				lines: 70, // The number of lines to draw
-				length: 1, // The length of each line
-				width: 1, // The line thickness
-				radius: 100, // The radius of the inner circle
-				corners: 0, // Corner roundness (0..1)
-				rotate: 0, // The rotation offset
-				color: '#06f', // #rgb or #rrggbb
-				speed: 1, // Rounds per second
-				trail: 20, // Afterglow percentage
-				shadow: false, // Whether to render a shadow
-				hwaccel: false, // Whether to use hardware acceleration
-				className: 'spinner', // The CSS class to assign to the spinner
-				zIndex: 2e9, // The z-index (defaults to 2000000000)
-				top: 'auto', // Top position relative to parent in px
-				left: 'auto' // Left position relative to parent in px
-			};
-			var target = document.getElementById('loading');
-			var spinner = new Spinner(opts).spin(target);
-
-			var socket = io.connect('');
-			socket.on('dashboard', function (data) {
-				$('[data="nm-hostname"]').text('@'+data.hostname+', '+data.type+' ('+data.arch+') '+data.release);
-				$('#loading').hide();
-			});
-			socket.emit('hello', 'world', function (data) {
-				console.log(data);
-			});
-			socket.emit('hello', 'world', function (data) {
-				console.log(data);
-			});
-			socket.on('system', function (data) {
-				// TODO: show data.
-			});
-		</script>
+		<script src="assets/js/core.js"></script>
 	</body>	
 </html>

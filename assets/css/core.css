@@ -16,3 +16,11 @@
 	text-align: center;
 	margin: 0;
 }
+.nm-table {
+	table-layout: fixed;
+}
+.nm-table td {
+	overflow: hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
